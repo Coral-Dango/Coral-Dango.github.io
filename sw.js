@@ -1,4 +1,4 @@
-const VERSION = "1733912195492";const preCache = ["/Coral-Dango/Coral-Dango.github.io/images/taichi.png","/Coral-Dango/Coral-Dango.github.io/images/banner.webp","/Coral-Dango/Coral-Dango.github.io/css/loader.css","/Coral-Dango/Coral-Dango.github.io/css/style.css","/Coral-Dango/Coral-Dango.github.io/js/script.js"];const cacheDomain = [
+const VERSION = "1733912424517";const preCache = ["/images/taichi.png","/images/banner.webp","/css/loader.css","/css/style.css","/js/script.js"];const cacheDomain = [
   "fonts.googleapis.com",
   "npm.webcache.cn",
   "unpkg.com",
