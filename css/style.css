@@ -1198,27 +1198,6 @@ a {
   max-width: 100%;
   margin: 0 auto;
 }
-.katex-display {
-  overflow-x: auto;
-  overflow-y: hidden;
-}
-.katex {
-  width: calc(100% - 2px);
-}
-.katex-html {
-  padding: 3px;
-}
-.katex-html .base {
-  margin: 0 auto;
-}
-.katex-html:has(span.tag) {
-  display: flex !important;
-}
-.katex-display>.katex>.katex-html>.tag {
-  position: relative !important;
-  float: right;
-  margin-left: 0.25rem;
-}
 .post-link {
   position: absolute;
   top: 0;
