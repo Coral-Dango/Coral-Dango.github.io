@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>latex简单入门</title>
+    <url>/2024/12/12/latex%E7%AE%80%E5%8D%95%E5%85%A5%E9%97%A8/</url>
+    <content><![CDATA[<p>参考：<a href="https://latex.lierhua.top/zh/">LaTeX 入门与进阶</a>，<a href="https://www.bilibili.com/av279663878">教程-30分钟速通LaTeX</a>。</p>
+<h3 id="LaTex简介">LaTex简介</h3>
+<p>LaTeX 是一种专业的<strong>排版系统</strong>，通过编写<strong>标记语言</strong>实现精确的排版控制，尤其擅长处理<strong>复杂数学公式</strong>的学术文档。</p>
+<p>使用 LaTeX 通常有两种方式：</p>
+<ul>
+<li>在线编辑器（推荐新手使用），例如 <a href="https://www.overleaf.com">Overleaf</a></li>
+<li>本地环境，例如 TexLive + VSCode。</li>
+</ul>
+<p>通过写好的模板进行 LaTeX 排版非常简单。但要精通 LaTeX 非常困难。</p>
+<hr>
+<h3 id="模板">模板</h3>
+<p>LaTeX 模板为文档提供了<strong>预定义的结构和格式</strong>，能够确保文档格式<strong>符合特定规范</strong>（如期刊要求）、简化复杂的排版工作，并提供一致的视觉风格。</p>
+<p>使用模板的基本步骤如下：</p>
+<ol>
+<li><strong>文档框架</strong>
+<ul>
+<li>修改文档的类和页面设置</li>
+<li>配置所需的宏包</li>
+<li>调整模板参数</li>
+</ul>
+</li>
+<li><strong>内容填充</strong>
+<ul>
+<li>编写标题、作者、摘要等信息</li>
+<li>撰写正文内容</li>
+<li>插入公式、图表和参考文献</li>
+</ul>
+</li>
+</ol>
+<p>模板中需要注意的关键点包括：</p>
+<ul>
+<li><strong>注释</strong>：LaTeX 使用 <code>%</code> 表示注释内容，注释不会出现在输出文档中。</li>
+<li><strong>命令和特殊字符</strong>：LaTeX 使用 <code>\</code> 作为命令的起始符和特殊字符的转义符。</li>
+<li><strong>普通文本</strong>：标题、摘要、正文、图表等为常规文本内容。</li>
+</ul>
+<p>常见特殊字符及其用途：</p>
+<table>
+<thead>
+<tr>
+<th>特殊字符</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>%</code></td>
+<td>注释标记</td>
+</tr>
+<tr>
+<td><code>$</code></td>
+<td>数学模式分隔符</td>
+</tr>
+<tr>
+<td><code>&amp;</code></td>
+<td>表格对齐标记</td>
+</tr>
+<tr>
+<td><code>~</code></td>
+<td>不断行空格</td>
+</tr>
+<tr>
+<td><code>^</code> 和 <code>_</code></td>
+<td>上下标</td>
+</tr>
+<tr>
+<td><code>&#123;&#125;</code></td>
+<td>分组标记</td>
+</tr>
+<tr>
+<td><code>\</code></td>
+<td>命令起始符</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="正文">正文</h3>
+<h4 id="分节命令">分节命令</h4>
+<ul>
+<li><code>\chapter&#123;&#125;</code>：章标题（一般只用于书籍）。</li>
+<li><code>\section&#123;&#125;</code>：节标题。</li>
+<li><code>\subsection&#123;&#125;</code>：小节标题。</li>
+<li><code>\subsubsection&#123;&#125;</code>：小小节标题。</li>
+</ul>
+<h4 id="段落控制">段落控制</h4>
+<ul>
+<li><code>\\</code> 或 <code>\newline</code>：换行。</li>
+<li><code>\par</code>：段落分隔。</li>
+<li><code>\newpage</code>：强制分页。</li>
+<li><code>\setlength&#123;\parindent&#125;&#123;2em&#125;</code>：设置段落缩进。</li>
+</ul>
+<hr>
+<h3 id="数学公式">数学公式</h3>
+<h4 id="行内公式">行内公式</h4>
+<p>用两个 <code>$</code> 包裹公式，形如<code>$公式$</code>。例如：<code>$e^&#123;i\pi&#125; + 1 = 0$</code>，输出结果为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>e</mi><mrow><mi>i</mi><mi>π</mi></mrow></msup><mo>+</mo><mn>1</mn><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">e^{i\pi} + 1 = 0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.908em;vertical-align:-0.0833em;"></span><span class="mord"><span class="mord mathnormal">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8247em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.03588em;">iπ</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span>。</p>
+<h4 id="不带编号的独立公式">不带编号的独立公式</h4>
+<p>形如 <code>\[公式\]</code> 或 <code>$$公式$$</code> 。例如：</p>
+<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\[</span></span><br><span class="line">F = G <span class="keyword">\frac</span>&#123;m<span class="built_in">_</span>1 m<span class="built_in">_</span>2&#125;&#123;R<span class="built_in">^</span>2&#125;</span><br><span class="line"><span class="keyword">\]</span></span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>F</mi><mo>=</mo><mi>G</mi><mfrac><mrow><msub><mi>m</mi><mn>1</mn></msub><msub><mi>m</mi><mn>2</mn></msub></mrow><msup><mi>R</mi><mn>2</mn></msup></mfrac></mrow><annotation encoding="application/x-tex">F = G \frac{m_1 m_2}{R^2}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.7936em;vertical-align:-0.686em;"></span><span class="mord mathnormal">G</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.1076em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7401em;"><span style="top:-2.989em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal">m</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal">m</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
+<h4 id="带编号的独立公式">带编号的独立公式</h4>
+<p>使用 <code>\begin&#123;equation&#125;</code> 环境，例如：</p>
+<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;equation&#125;</span><br><span class="line">i<span class="keyword">\hbar</span><span class="keyword">\frac</span>&#123;<span class="keyword">\partial</span> <span class="keyword">\psi</span>&#125;&#123;<span class="keyword">\partial</span> t&#125; = <span class="keyword">\frac</span>&#123;-<span class="keyword">\hbar</span><span class="built_in">^</span>2&#125;&#123;2m&#125; <span class="keyword">\nabla</span><span class="built_in">^</span>2 <span class="keyword">\psi</span> + V <span class="keyword">\psi</span></span><br><span class="line"><span class="keyword">\end</span>&#123;equation&#125;</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable rowspacing="0.16em" columnspacing="1em"><mtr><mtd class ="mtr-glue"></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mi>i</mi><mi mathvariant="normal">ℏ</mi><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>ψ</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mo>−</mo><msup><mi mathvariant="normal">ℏ</mi><mn>2</mn></msup></mrow><mrow><mn>2</mn><mi>m</mi></mrow></mfrac><msup><mi mathvariant="normal">∇</mi><mn>2</mn></msup><mi>ψ</mi><mo>+</mo><mi>V</mi><mi>ψ</mi></mrow></mstyle></mtd><mtd class ="mtr-glue"></mtd><mtd class ="mml-eqn-num"></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{equation}
+i\hbar\frac{\partial \psi}{\partial t} = \frac{-\hbar^2}{2m} \nabla^2 \psi + V \psi
+\end{equation}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.1771em;vertical-align:-0.8386em;"></span><span class="mtable"><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3386em;"><span style="top:-3.3386em;"><span class="pstrut" style="height:3.4911em;"></span><span class="mord"><span class="mord mathnormal">i</span><span class="mord">ℏ</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal">t</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal" style="margin-right:0.03588em;">ψ</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.4911em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span><span class="mord mathnormal">m</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">−</span><span class="mord"><span class="mord">ℏ</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mord"><span class="mord">∇</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mord mathnormal" style="margin-right:0.03588em;">ψ</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mord mathnormal" style="margin-right:0.03588em;">ψ</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8386em;"><span></span></span></span></span></span></span></span><span class="tag"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3386em;"><span style="top:-3.3386em;"><span class="pstrut" style="height:3.4911em;"></span><span class="eqn-num"></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8386em;"><span></span></span></span></span></span></span></span></span></p>
+<h4 id="多行公式">多行公式</h4>
+<p>LaTeX 提供以下多行公式环境：</p>
+<table>
+<thead>
+<tr>
+<th>环境</th>
+<th>对齐方式</th>
+<th>编号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gather*</code></td>
+<td>居中对齐，用 <code>\\</code> 分行</td>
+<td>无编号</td>
+</tr>
+<tr>
+<td><code>gather</code></td>
+<td>居中对齐，用 <code>\\</code> 分行</td>
+<td>自动编号</td>
+</tr>
+<tr>
+<td><code>align*</code></td>
+<td>按 <code>&amp;</code> 对齐，用 <code>\\</code> 分行</td>
+<td>无编号</td>
+</tr>
+<tr>
+<td><code>align</code></td>
+<td>按 <code>&amp;</code> 对齐，用 <code>\\</code> 分行</td>
+<td>自动编号</td>
+</tr>
+</tbody>
+</table>
+<p>示例：</p>
+<figure class="highlight latex"><table><tr><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;aligned&#125;</span><br><span class="line"><span class="built_in">&amp;</span><span class="keyword">\nabla</span> <span class="keyword">\cdot</span> <span class="keyword">\mathbf</span>&#123;E&#125; = <span class="keyword">\frac</span>&#123;<span class="keyword">\rho</span>&#125;&#123;<span class="keyword">\epsilon</span><span class="built_in">_</span>0&#125; <span class="keyword">\quad</span> <span class="built_in">&amp;</span><span class="keyword">\text</span>&#123;(高斯定律)&#125; <span class="keyword">\\</span></span><br><span class="line"><span class="built_in">&amp;</span><span class="keyword">\nabla</span> <span class="keyword">\cdot</span> <span class="keyword">\mathbf</span>&#123;B&#125; = 0 <span class="keyword">\quad</span> <span class="built_in">&amp;</span><span class="keyword">\text</span>&#123;(磁场的高斯定律)&#125; <span class="keyword">\\</span></span><br><span class="line"><span class="built_in">&amp;</span><span class="keyword">\nabla</span> <span class="keyword">\times</span> <span class="keyword">\mathbf</span>&#123;E&#125; = -<span class="keyword">\frac</span>&#123;<span class="keyword">\partial</span> <span class="keyword">\mathbf</span>&#123;B&#125;&#125;&#123;<span class="keyword">\partial</span> t&#125; <span class="keyword">\quad</span> <span class="built_in">&amp;</span><span class="keyword">\text</span>&#123;(法拉第电磁感应定律)&#125; <span class="keyword">\\</span></span><br><span class="line"><span class="built_in">&amp;</span><span class="keyword">\nabla</span> <span class="keyword">\times</span> <span class="keyword">\mathbf</span>&#123;B&#125; = <span class="keyword">\mu</span><span class="built_in">_</span>0 <span class="keyword">\mathbf</span>&#123;J&#125; + <span class="keyword">\mu</span><span class="built_in">_</span>0 <span class="keyword">\epsilon</span><span class="built_in">_</span>0 <span class="keyword">\frac</span>&#123;<span class="keyword">\partial</span> <span class="keyword">\mathbf</span>&#123;E&#125;&#125;&#123;<span class="keyword">\partial</span> t&#125; <span class="keyword">\quad</span> <span class="built_in">&amp;</span><span class="keyword">\text</span>&#123;(安培-麦克斯韦方程)&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;aligned&#125;</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable rowspacing="0.25em" columnalign="right left right" columnspacing="0em 1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mi mathvariant="normal">∇</mi><mo>⋅</mo><mi mathvariant="bold">E</mi><mo>=</mo><mfrac><mi>ρ</mi><msub><mi>ϵ</mi><mn>0</mn></msub></mfrac><mspace width="1em"/></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mtext>(高斯定律)</mtext></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mi mathvariant="normal">∇</mi><mo>⋅</mo><mi mathvariant="bold">B</mi><mo>=</mo><mn>0</mn><mspace width="1em"/></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mtext>(磁场的高斯定律)</mtext></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mi mathvariant="normal">∇</mi><mo>×</mo><mi mathvariant="bold">E</mi><mo>=</mo><mo>−</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi mathvariant="bold">B</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>t</mi></mrow></mfrac><mspace width="1em"/></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mtext>(法拉第电磁感应定律)</mtext></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mi mathvariant="normal">∇</mi><mo>×</mo><mi mathvariant="bold">B</mi><mo>=</mo><msub><mi>μ</mi><mn>0</mn></msub><mi mathvariant="bold">J</mi><mo>+</mo><msub><mi>μ</mi><mn>0</mn></msub><msub><mi>ϵ</mi><mn>0</mn></msub><mfrac><mrow><mi mathvariant="normal">∂</mi><mi mathvariant="bold">E</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>t</mi></mrow></mfrac><mspace width="1em"/></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mtext>(安培-麦克斯韦方程)</mtext></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
+&amp;\nabla \cdot \mathbf{E} = \frac{\rho}{\epsilon_0} \quad &amp;\text{(高斯定律)} \\
+&amp;\nabla \cdot \mathbf{B} = 0 \quad &amp;\text{(磁场的高斯定律)} \\
+&amp;\nabla \times \mathbf{E} = -\frac{\partial \mathbf{B}}{\partial t} \quad &amp;\text{(法拉第电磁感应定律)} \\
+&amp;\nabla \times \mathbf{B} = \mu_0 \mathbf{J} + \mu_0 \epsilon_0 \frac{\partial \mathbf{E}}{\partial t} \quad &amp;\text{(安培-麦克斯韦方程)}
+\end{aligned}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:8.4584em;vertical-align:-3.9792em;"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:4.4792em;"><span style="top:-6.7431em;"><span class="pstrut" style="height:3.3714em;"></span><span class="mord"></span></span><span style="top:-4.7671em;"><span class="pstrut" style="height:3.3714em;"></span><span class="mord"></span></span><span style="top:-2.7357em;"><span class="pstrut" style="height:3.3714em;"></span><span class="mord"></span></span><span style="top:-0.3782em;"><span class="pstrut" style="height:3.3714em;"></span><span class="mord"></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:3.9792em;"><span></span></span></span></span></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:4.4792em;"><span style="top:-6.7431em;"><span class="pstrut" style="height:3.3714em;"></span><span class="mord"><span class="mord"></span><span class="mord">∇</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathbf">E</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.1076em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal">ϵ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">ρ</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.836em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:1em;"></span></span></span><span style="top:-4.7671em;"><span class="pstrut" style="height:3.3714em;"></span><span class="mord"><span class="mord"></span><span class="mord">∇</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathbf">B</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:1em;"></span></span></span><span style="top:-2.7357em;"><span class="pstrut" style="height:3.3714em;"></span><span class="mord"><span class="mord"></span><span class="mord">∇</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathbf">E</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord">−</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal">t</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathbf">B</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:1em;"></span></span></span><span style="top:-0.3782em;"><span class="pstrut" style="height:3.3714em;"></span><span class="mord"><span class="mord"></span><span class="mord">∇</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathbf">B</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mord"><span class="mord mathnormal">μ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathbf">J</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord"><span class="mord mathnormal">μ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal">ϵ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal">t</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathbf">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:1em;"></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:3.9792em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:1em;"></span><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:4.4792em;"><span style="top:-6.7431em;"><span class="pstrut" style="height:3.3714em;"></span><span class="mord"><span class="mord text"><span class="mord">(</span><span class="mord cjk_fallback">高斯定律</span><span class="mord">)</span></span></span></span><span style="top:-4.7671em;"><span class="pstrut" style="height:3.3714em;"></span><span class="mord"><span class="mord text"><span class="mord">(</span><span class="mord cjk_fallback">磁场的高斯定律</span><span class="mord">)</span></span></span></span><span style="top:-2.7357em;"><span class="pstrut" style="height:3.3714em;"></span><span class="mord"><span class="mord text"><span class="mord">(</span><span class="mord cjk_fallback">法拉第电磁感应定律</span><span class="mord">)</span></span></span></span><span style="top:-0.3782em;"><span class="pstrut" style="height:3.3714em;"></span><span class="mord"><span class="mord text"><span class="mord">(</span><span class="mord cjk_fallback">安培</span><span class="mord">-</span><span class="mord cjk_fallback">麦克斯韦方程</span><span class="mord">)</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:3.9792em;"><span></span></span></span></span></span></span></span></span></span></span></span></p>
+<h3 id="图片">图片</h3>
+<p>插入图片需要依赖包graphicx。</p>
+]]></content>
+      <tags>
+        <tag>LaTex</tag>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用 HEXO 和 GitHub Pages 创建个人博客</title>
+    <url>/2024/12/14/%E4%BD%BF%E7%94%A8-HEXO-%E5%88%9B%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<h2 id="搭建博客之前的准备">搭建博客之前的准备</h2>
+<p>在创建博客之前需要先准备好如下环境：</p>
+<ol>
+<li>一台电脑（我用的是win11系统）</li>
+<li>在电脑上安装 git  node.js 和 npm 。一般情况下node.js会自带npm，而有些Linux系统使用包管理器安装node.js，并不自带npm，所以需要进行安装npm。</li>
+<li>使用 npm 安装 hexo。在终端中执行如下命令：<code>npm install -g hexo</code>。</li>
+<li>一个 GitHub 账号。没有的话需要进行注册。</li>
+</ol>
+<p>做好这些准备后，进行如下操作：</p>
+<ol>
+<li>在GitHub上新建一个仓库，仓库名形如：<code>你的用户名.github.io</code>。</li>
+<li>在终端上定位到你需要存放博客资源的文件夹下。执行<code>hexo init 你的博客名</code>。</li>
+<li>修改。</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>博客</tag>
+        <tag>教程</tag>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>欢迎来到小珊瑚的博客</title>
+    <url>/2024/12/11/%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0%E5%B0%8F%E7%8F%8A%E7%91%9A%E7%9A%84%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<h2 id="欢迎来到小珊瑚的温馨小窝-●’◡’●">欢迎来到小珊瑚的温馨小窝 (●’◡’●)</h2>
+<ul>
+<li>小珊瑚是一只会用人类语言交流的特别猫咪，属于XYN🍥家族呢～</li>
+<li>虽然有时候呆呆的、笨笨的，但这样反而更可爱对吧？<s>而且偶尔有点小坏坏</s>（才不是呢</li>
+<li>因为太单纯所以特别容易上当，请大家温柔对待小珊瑚啦 (❁´◡`❁)</li>
+<li>作为一只乖巧的猫咪，真心希望能交到许多好朋友，不要让小珊瑚孤单哦 (｡•́︿•̀｡)</li>
+<li>想和小珊瑚成为朋友的话，随时欢迎发邮件聊天：<a href="mailto:Trans.Coral.307@gmail.com">Trans.Coral.307@gmail.com</a></li>
+<li>最近正在努力学习计算机知识 (ง •̀_•́)ง，<s>虽然其实学不会＞﹏＜</s></li>
+<li>这个温暖的小窝是用Hexo精心搭建的，采用了超可爱的<a href="https://github.com/D-Sketon/hexo-theme-reimu">Reimu</a>主题 ♪(^∇^*)</li>
+</ul>
+<h2 id="建造这个小窝的初衷">建造这个小窝的初衷</h2>
+<ul>
+<li>小珊瑚其实是一只非常渴望爱与陪伴的孤单猫咪。</li>
+<li>但是呢，小珊瑚并不甘心就这样孤单下去。</li>
+<li>在这个有时候显得有点冷漠的世界里，希望能打造一个属于自己的温暖港湾，在这里安心地做个甜美的梦。</li>
+</ul>
+<h2 id="关于以后">关于以后</h2>
+<p>以后这里会记录下我的日常点滴,欢迎常来做客哦 (｡･ω･｡)ﾉ♡</p>
+]]></content>
+      <tags>
+        <tag>关于小珊瑚</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>计算机的发展史</title>
+    <url>/2024/12/11/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E5%8F%91%E5%B1%95%E5%8F%B2/</url>
+    <content><![CDATA[<p>参考：<a href="https://thecrashcourse.com/topic/computerscience/">计算机科学速成课</a></p>
+<h2 id="早期的计算设备">早期的计算设备</h2>
+<p>最早的计算设备是算盘，算盘通过存储计算内容降低了人们计算的门槛。</p>
+<p>后来人们也发明了大量类似算盘的计算设备，如星盘和计算尺。</p>
+<h3 id="「计算机」这一概念的出现">「计算机」这一概念的出现</h3>
+]]></content>
+      <tags>
+        <tag>笔记</tag>
+        <tag>历史</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>飓光之城 莎伦Ⅰ</title>
+    <url>/2024/12/13/%E9%A3%93%E5%85%89%E4%B9%8B%E5%9F%8E-%E8%8E%8E%E4%BC%A6%E2%85%A0/</url>
+    <content><![CDATA[<center>
+<p>我的王，<br>
+你可见暮色沉沉，<br>
+吞没城墙，<br>
+战马疲惫，<br>
+无声卧躺？</p>
+<p>你可见金冠失辉，<br>
+田野覆霜，<br>
+丰饶的国度而今褪去荣光？</p>
+<p>为何留驻，这将逝的国，<br>
+等待宝血溅落，洗礼苍茫？</p>
+<p>为何留恋，破碎的往昔？<br>
+坚守未尽，未了的誓言长？</p>
+</center>
+<p>暮霭如帷，悄然吞噬着斑驳的剧院高墙。</p>
+<p>台上，她衣着褪色的戏装，布料上污渍斑斑，仿佛诉说着一国的衰落。高歌的吟诵，在破败的剧场中久久回荡。</p>
+<p>台上，戏子扮演「国王」跪倒在朽木与破布拼凑的王座旁，闭眼忧伤，仿佛倾听着命运的声响。剧院外，行人的脚步声穿透老朽的木门，每一步都化作戏中敌军的鼓点，将这位「国王」判决，宣告一国的终章。</p>
+<p>她款款走向戏子的身旁，搀扶扮演的国王，裙摆沾着岁月的尘埃。恍若台下千百次的排演，此刻泪水自然滑落，将那未完的哀伤尽数唱出：</p>
+<center>
+<p>「我的王，<br>
+你可记得城门高耸，<br>
+金甲映辉煌？<br>
+你可记得旌旗猎猎，<br>
+铁骑踏春霜？</p>
+<p>而今城外寒风起，<br>
+敌幕绕城廊。<br>
+昔日繁华成梦去，<br>
+记否旧时光…」</p>
+</center>
+<p>台下，零落的观众已然散尽，唯余昏黄的灯光摇曳，将两人的身影投射在褪色的幕布之上，仿佛一幅斑驳的旧画。</p>
+]]></content>
+      <tags>
+        <tag>小说</tag>
+        <tag>飓光之城</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>飓光之城 角色、背景与大纲</title>
+    <url>/2024/12/13/%E9%A3%93%E5%85%89%E4%B9%8B%E5%9F%8E-%E8%A7%92%E8%89%B2%E3%80%81%E8%83%8C%E6%99%AF%E4%B8%8E%E5%A4%A7%E7%BA%B2/</url>
+    <content><![CDATA[<h2 id="世界观：">世界观：</h2>
+<h3 id="世界">世界</h3>
+<p>这颗星球叫做克尔纳，意为「人类的世界」。</p>
+<h3 id="历史">历史</h3>
+<p>将浩瀚的历史卷轴一分为四：</p>
+<h4 id="创世纪">创世纪</h4>
+<p>在人类统治世界之前的历史叫做创世纪。</p>
+<p>这时，名为古龙的存在统治着大地。它们口吐出火焰将天空遮蔽，蒸发了河海汇聚了水汽，这些水汽全部聚集在高天还有山巅这些它们生活的领地。这时候的几乎所有其他生命都活在它们的阴影下。</p>
+<p>这时，诞生了许多的人类的英雄，流传了许多的英雄史诗。比如著名的阿洛斯，没有人知道历史上到底有没有这个人存在，但是他流传的英雄壮举是一定有人做了的。而这些流传的英雄史诗鼓舞了一代又一代的人。</p>
+<p>后来，这个时代完结了。传说有「无上的伟力」自天空落下，「祂」的长相与人类别无二致，以超越世界的力量，凭一己之力让古龙退下了历史的舞台。</p>
+<p>然而后来的人们没有找到过「祂」的任何痕迹，有些人认为「祂」是天上的「神」，因为古龙遮蔽天空的行为令「祂」不满，于是消灭了大量的古龙。</p>
+<p>有些人开始崇拜起「祂」来，不断传颂「祂」的歌谣，相信「神爱世人」，相信「祂」会庇佑「祂」的世人。</p>
+<p>没有人知道古龙们消失的具体细节，人们只知道古龙的时代落幕了，属于人类的时代到来了。接下来将有牧歌与诗人轻抚遍支离破碎的大地。</p>
+<h5 id="创世纪流传的歌谣">创世纪流传的歌谣</h5>
+<ul>
+<li>
+<p>《克尔纳七日之歌》</p>
+<blockquote>
+<p>起初，天空暗淡、众水干涸。口吐火焰的古龙行于地上，那火灼烧万千脆弱生灵。</p>
+<p>有「神」自天空落下。</p>
+<p>「神」驱散灰烬，令天空不再灰暗，日光轻抚大地。</p>
+<p>「神」挥下了「祂」的血，变作河流与海洋，众生第一次体会雨水。</p>
+<p>雨水与日光一同将古龙埋葬，脆弱的生灵们用感官度量世界，用身躯塑造世界。</p>
+<p>这，是第一日。</p>
+<p>…</p>
+</blockquote>
+</li>
+<li>
+<p>《盗取龙血的阿洛斯》</p>
+<blockquote>
+<p>…</p>
+<p>看那英雄，看那伟大的阿洛斯。</p>
+<p>他的身躯可以遮挡火焰，</p>
+<p>他的勇气能与尼亚山巅比高，</p>
+<p>他竟潜入恶龙的山洞，</p>
+<p>盗取受伤巨龙的血液，</p>
+<p>为治愈我们的疾病。</p>
+<p>…</p>
+</blockquote>
+</li>
+<li>
+<p>《受苦的阿洛斯》</p>
+<blockquote>
+<p>…</p>
+<p>巨龙将你缚于山巅，承受万千火焰灼烧，</p>
+<p>然而火焰灼烧灵魂与身躯，这痛苦却也不能将你焚烧成灰，因你的意志较之百千人更强更坚。</p>
+<p>…</p>
+</blockquote>
+</li>
+<li>
+<p>《解放的阿洛斯》</p>
+<blockquote>
+<p>…</p>
+<p>阿洛斯，家乡称颂的英雄，将儿时的我拉离冥河的救星，</p>
+<p>我盗取了长岚山上巨龙的火焰，锻造了这举世无双的利斧，</p>
+<p>哪怕龙晶打造的锁链也不能抵挡。</p>
+<p>…</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="牧歌纪">牧歌纪</h4>
+<p>龙的时代结束，人的时代到来。</p>
+<p>人类在大地上依照自己的美学建造零星的家园，这个时代著名的人物有诗人维吉尔、萨福、伊卡洛斯、蒙德，剧作家苏格拉底、雅尔塔、罗杰斯，建筑师卡卡瓦下、</p>
+<p>牧歌纪散落的诗歌</p>
+<p>列王纪</p>
+<p>新元纪</p>
+<h2 id="角色志">角色志</h2>
+<p>莎伦：原是一门戏剧演员</p>
+]]></content>
+      <tags>
+        <tag>小说</tag>
+        <tag>飓光之城</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>友情链接</title>
+    <url>/link/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>分类</title>
+    <url>/categories/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>说说</title>
+    <url>/shuoshuo/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>标签</title>
+    <url>/tags/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+</search>
